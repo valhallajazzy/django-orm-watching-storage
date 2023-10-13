@@ -29,24 +29,23 @@ class Visit(models.Model):
             )
         )
 
-    def get_duration(visiter):
-        if visiter.leaved_at == None:
-            delta = localtime() - localtime(visiter.entered_at)
+    def get_duration(self):
+        if self.leaved_at == None:
+            self.delta = localtime() - localtime(self.entered_at)
         else:
-            delta = localtime(visiter.leaved_at) - localtime(visiter.entered_at)
-        return delta.total_seconds()
+            self.delta = localtime(self.leaved_at) - localtime(self.entered_at)
+        return self.delta.total_seconds()
 
-    def format_duration(seconds):
-        hours = int(seconds // 3600)
-        minutes = int(seconds % 3600 // 60 )
+    def format_duration(self):
+        duration_seconds = self.get_duration()
+        hours = int(duration_seconds // 3600)
+        minutes = int(duration_seconds % 3600 // 60 )
         return f'{hours}ч {minutes}мин'
 
-    def is_visit_long(visit, minutes=15):
-        delta = Visit.get_duration(visit)
+    def is_visit_long(self, minutes=15):
+        delta = self.get_duration()
         duration = delta//60
-        if duration > minutes:
-            return True
-        return False
+        return duration > minutes
 
 
 

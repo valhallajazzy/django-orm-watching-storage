@@ -8,12 +8,13 @@ def storage_information_view(request):
     visiters_now = Visit.objects.filter(leaved_at=None)
     non_closed_visits = []
     for visiter in visiters_now:
-        duration_seconds = Visit.get_duration(visiter)
-        duration = Visit.format_duration(duration_seconds)
+        duration = visiter.format_duration()
+        print(type(visiter.entered_at))
+        print(type(localtime(visiter.entered_at)))
         form = {
-            'who_entered': f'{visiter.passcard}',
-            'entered_at': f'{localtime(visiter.entered_at).strftime("%Y-%m-%d  %H.%M")}',
-            'duration': f'{duration}',
+            'who_entered': visiter.passcard,
+            'entered_at': localtime(visiter.entered_at).strftime("%Y-%m-%d  %H.%M"),
+            'duration': duration,
         }
         non_closed_visits.append(form)
 
