@@ -2,3 +2,4 @@
 poetry.lock
 project/__pycache__
 datacenter/__pychache__
+datacenter/migrations/__pychache__
