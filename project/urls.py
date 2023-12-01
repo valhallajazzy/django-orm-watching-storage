@@ -1,6 +1,6 @@
-from datacenter.active_passcards_view import active_passcards_view
-from datacenter.passcard_info_view import passcard_info_view
-from datacenter.storage_information_view import storage_information_view
+from datacenter.views import active_passcards_view
+from datacenter.views import passcard_info_view
+from datacenter.views import storage_information_view
 from django.urls import path
 
 urlpatterns = [
