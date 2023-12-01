@@ -1,4 +1,5 @@
 .venv
+.env
 poetry.lock
 project/__pycache__/
 datacenter/__pycache__/
