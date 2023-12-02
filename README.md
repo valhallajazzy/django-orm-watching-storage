@@ -18,7 +18,7 @@ $ poetry shell
 * Создайте файл .env в корневой директории проекта и задайте переменные окружения
 
 ![Screenshot](https://github.com/valhallajazzy/django-orm-watching-storage/blob/main/Pictures/env_path.png)
-![Screenshot](https://github.com/valhallajazzy/django-orm-watching-storage/blob/main/Pictures/values_environ.png)
+![Screenshot](https://github.com/valhallajazzy/django-orm-watching-storage/blob/main/Pictures/values.png)
 
 Подробнее о переменных окружения:
 
